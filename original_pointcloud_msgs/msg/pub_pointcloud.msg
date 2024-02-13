@@ -1,0 +1,13 @@
+string id
+string type
+string space
+string time
+string scan_start_time
+uint32 height
+uint32 width
+sensor_msgs/PointField[] fields
+bool is_bigendian
+uint32 point_step
+uint32 row_step
+uint8[] data
+bool is_dense

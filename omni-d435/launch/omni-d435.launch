@@ -1,0 +1,20 @@
+<launch>
+  <arg name="pub" default="false" />
+  <arg name="sub" default="false" />
+
+  <group unless="$(arg pub)">
+    <group unless="$(arg sub)">
+      <node name="pcl_talker"   pkg="omni-d435" type="pc_pub" output="screen"/>
+      <node name="pcl_listener" pkg="omni-d435" type="pc_sub" output="screen"/>
+    </group>
+  </group>
+
+  <group if="$(arg pub)">
+    <node name="pcl_talker"   pkg="omni-d435" type="pc_pub" output="screen"/>
+  </group>
+
+  <group if="$(arg sub)">
+    <node name="pcl_listener" pkg="omni-d435" type="pc_sub" output="screen"/>
+  </group>
+
+</launch>
